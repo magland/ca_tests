@@ -11,6 +11,6 @@
         "num_fea":10,
         "adj_radius":2,
         "channels":"1,2,3,4",
-        "timerange":[1,10000000]
+        "timerange":[-1,-1]
 }
 
