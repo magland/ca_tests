@@ -6,7 +6,11 @@ mountainlab/mountainview/bin
 mountainlab/mdaconvert/bin
 
 -----------------------
-Place the .dat file in this folder create the raw.mda using:
+Place the .dat file in this folder, or download it using:
+> download_raw.sh
+
+-----------------------
+Convert to .mda using:
 
 > convert_raw.sh
 
