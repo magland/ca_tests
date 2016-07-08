@@ -1,0 +1,7 @@
+first download and convert the raw data in the example1 directory
+
+It does the sorting without whitening, but it normalizes the channels as we had discussed to have variance=1.
+
+You will notice that the script is modified somewhat and there is a new parameter.
+
+
