@@ -19,6 +19,7 @@ function run_algorithm(params) {
 	params.channels=params.channels||'';
 	params.timerange=params.timerange||[-1,-1];
 	params.use_whitening=params.use_whitening||'true';
+	params.use_mask_out_artifacts=params.use_mask_out_artifacts||'true';
 	
 	var raw=params.raw;
 	var geom=params.geom;
@@ -93,8 +94,13 @@ function run_algorithm(params) {
 	}
 
 	extract_raw(raw,'@pre0',o_extract_raw);
-	bandpass_filter('@pre0','@pre1',o_filter);
-	mask_out_artifacts('@pre1','@pre1b',o_mask_out_artifacts);
+	if (params.use_mask_out_artifacts) {
+		bandpass_filter('@pre0','@pre1',o_filter);
+		mask_out_artifacts('@pre1','@pre1b',o_mask_out_artifacts);
+	}
+	else {
+		bandpass_filter('@pre0','@pre1b',o_filter);
+	}
 	if (params.use_whitening=='true')
 		whiten('@pre1b','@pre2',o_whiten);
 	else
